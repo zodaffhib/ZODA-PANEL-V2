@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PANEL ZODA FF</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="panel">
+    <h1 class="title">PANEL ZODA FF</h1>
 
+    <div class="section">
+      <div class="label">
+        <strong>AIMLOCK</strong>
+        <p>Auto aim at enemies</p>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="aimlock-toggle">
+        <span class="slider"></span>
+        <span class="light" id="status-light"></span>
+      </label>
+    </div>
+
+    <div class="section">
+      <div class="label">
+        <strong>Free Fire</strong>
+        <p>Launch the game</p>
+      </div>
+      <button id="launch-btn">GO</button>
+    </div>
+
+    <p class="footer">Enhanced Gameplay Experience • v1.0</p>
+  </div>
+
+  <div id="notification" class="notification hidden">
+    <strong>AIMLOCK activado</strong><br>
+    Sensibilidad mejorada ya está añadida en el Free Fire
+  </div>
+
+  <script>
+    const toggle = document.getElementById("aimlock-toggle");
+    const light = document.getElementById("status-light");
+    const notification = document.getElementById("notification");
+    const launchBtn = document.getElementById("launch-btn");
+
+    toggle.addEventListener("change", () => {
+      if (toggle.checked) {
+        light.classList.add("on");
+        notification.classList.remove("hidden");
+      } else {
+        light.classList.remove("on");
+        notification.classList.add("hidden");
+      }
+    });
+
+    launchBtn.addEventListener("click", () => {
+      launchBtn.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
